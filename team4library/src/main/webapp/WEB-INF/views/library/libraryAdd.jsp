@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,19 +8,19 @@
 <title>LIBRARY ADD</title>
 </head>
 <body>
-	<h1>µµ¼­°ü °ü¸®ÀÚ µî·Ï</h1>
+	<h1>ë„ì„œê´€ ê´€ë¦¬ìž ë“±ë¡</h1>
 	
 	<form action="<c:url value="/library/libraryAdd" />" method="post">
-	¾ÆÀÌµð  : 	<input type="text" name="library_id"/>
-	ºñ¹Ð¹øÈ£  : <input type="password" name="library_pw"/>
+	ì•„ì´ë””  : 	<input type="text" name="library_id"/>
+	ë¹„ë°€ë²ˆí˜¸  : <input type="password" name="library_pw"/>
 		<select name="local_no">
-			<option>::¼±ÅÃ::</option>
+			<option>::ì„ íƒ::</option>
 			<c:forEach var="local" items="${local}">
 				<option value="${local.local_no}">${local.local_name}</option>
 			</c:forEach>
 		</select>
-		<input type="submit" value="¿Ï·á"/>
-		<input type="reset" value="ÃÊ±âÈ­"/>
+		<input type="submit" value="ì™„ë£Œ"/>
+		<input type="reset" value="ì´ˆê¸°í™”"/>
 	</form>
 	
 </body>

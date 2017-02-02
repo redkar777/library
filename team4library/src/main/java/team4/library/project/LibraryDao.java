@@ -5,4 +5,5 @@ import java.util.List;
 public interface LibraryDao {
 	int LibraryAdd(Library library);
 	List<Local> localSelect();
+	Library loginLibrary(Library library);
 }

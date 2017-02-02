@@ -3,6 +3,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="team4.library.project.LibraryMapper">
+<select id="libraryLogin" parameterType="team4.library.project.Library"
+						resultType="team4.library.project.Library">
+	SELECT 
+		library_id,
+		library_pw
+	FROM library 
+	WHERE 
+		library_id=#{library_id} AND library_pw=#{library_pw}
+</select>
 <insert id="libraryAdd"
 			parameterType="team4.library.project.Library">
 	INSERT INTO 
@@ -18,8 +27,8 @@
 </insert>
 <select id="localSelect" resultType="team4.library.project.Local">
 	SELECT 
-		local_no as local_no, 
-		local_name as local_name 
+		local_no, 
+		local_name 
 		FROM 
 		local
 </select>

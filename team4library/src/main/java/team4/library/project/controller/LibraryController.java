@@ -2,6 +2,7 @@ package team4.library.project.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,21 @@ public class LibraryController {
 	@Autowired
 	private LibraryService libraryService;
 	
+	@RequestMapping(value="/library/libraryLogin", method=RequestMethod.GET)
+	public String libraryLogin(){
+		
+		return "/library/libraryLogin";
+		
+	}
+	@RequestMapping(value="/library/libraryLogin", method=RequestMethod.POST)
+	public String libraryLogin(Library library, HttpSession session){
+			logger.debug("library에 담긴 값 : "+library);
+			libraryService.libraryLogin(library);
+			session.setAttribute("library_id", libraryService.libraryLogin(library).getLibrary_id());
+			
+		return "/home";
+		
+	}
 	@RequestMapping(value="/library/libraryAdd", method=RequestMethod.GET)
 	public String libraryAdd(Model model){
 		System.out.println("겟방식으로 들어옴");
@@ -36,6 +52,7 @@ public class LibraryController {
 	@RequestMapping(value="/library/libraryAdd", method=RequestMethod.POST)
 	public String libraryAdd(Library library){
 		System.out.println("library에 뭐가들어있냐?" + library);
+		logger.debug("library : "+library.toString());
 		libraryService.addLibrary(library);
 		return "redirect:/library/libraryLogin";
 		
