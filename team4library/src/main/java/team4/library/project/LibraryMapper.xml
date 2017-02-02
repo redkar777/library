@@ -1,0 +1,26 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="team4.library.project.LibraryMapper">
+<insert id="libraryAdd"
+			parameterType="team4.library.project.Library">
+	INSERT INTO 
+	library(
+		library_id,
+		library_pw,
+		local_no
+	) VALUES (
+		#{library_id},
+		#{library_pw},
+		#{local_no}
+		)
+</insert>
+<select id="localSelect" resultType="team4.library.project.Local">
+	SELECT 
+		local_no as local_no, 
+		local_name as local_name 
+		FROM 
+		local
+</select>
+</mapper>
