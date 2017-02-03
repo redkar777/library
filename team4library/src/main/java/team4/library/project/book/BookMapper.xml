@@ -1,0 +1,67 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="team4.library.project.book.BooksMapper">
+	<update id="stateUpdate" parameterType="team4.library.project.book.Book">
+		UPDATE book 
+		SET state_no = 2 
+		WHERE book_code=#{bookCode}
+		
+	</update>
+	
+	<insert id="disposalAdd" 
+						parameterType="team4.library.project.book.Disposal">
+	INSERT INTO 
+		disposal(
+					book_code,
+					disposal_bookname,
+					disposal_author,
+					genre_no,
+					disposal_publisher,
+					disposal_registerday
+				) 
+		SELECT 
+					book_code as bookCode,
+					book_name as disposalBookname,
+					book_author as disposalAuthor,
+					genre_no as genreNo,
+					book_publisher as disposalPublisher,
+					now()
+		FROM book 
+		WHERE 
+		book_code=#{bookCode}
+			
+		
+		
+						
+						
+	</insert>
+
+	<select id="genreSelect" resultType="team4.library.project.book.Genre">
+		SELECT 
+			genre_no as genreNo,
+			genre_name as genreName 
+		FROM 
+			genre
+			
+	
+	</select>
+	
+	<insert id="BooksAdd"
+					parameterType="team4.library.project.book.Book">
+	INSERT INTO 
+	book(
+		genre_no,
+		book_name,
+		book_author,
+		book_publisher
+	) VALUES (
+		#{genreNo},
+		#{bookName},
+		#{bookAuthor},
+		#{bookPublisher}
+	)	
+	
+	</insert>
+</mapper>
