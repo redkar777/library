@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +45,6 @@
   </style>
 </head>
 <body>
-	
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
@@ -54,33 +53,38 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>                        
 	      </button>
-	      <a class="navbar-brand" href="#">4Ï°∞ ÎèÑÏÑúÍ¥Ä</a>
+	      <a class="navbar-brand" href="#">4¡∂ µµº≠∞¸</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav">
+	        <li><a href="#">µµº≠∞¸∏Æ</a></li>
+	        <li><a href="#">»∏ø¯∞¸∏Æ</a></li>
+	        <li><a href="#">¥Îø©∞¸∏Æ</a></li>
+	      </ul>
 	    </div>
 	  </div>
 	</nav>
-	  
 	<div class="container-fluid text-center">    
- 
-      <h1>ÎèÑÏÑúÍ¥Ä Í¥ÄÎ¶¨ ÏãúÏä§ÌÖú</h1>
-      <form action="<c:url value="/library/libraryLogin"/>" method="post">
-      	<table align="center">
-      		<tr>
-      			<td>ID</td>
-      			<td><input type="text" name="library_id"/></td>
-      		</tr>
-      		<tr>
-      			<td>PW</td>
-      			<td><input type="password" name="library_pw"/></td>
-      		</tr>
-      		<tr>
-      			<td></td>
-      			<td>
-      			<input type="button" value="Î°úÍ∑∏Ïù∏"/>
-      			<input type="button" value="ÎèÑÏÑúÍ¥ÄÍ∞ÄÏûÖ" onclick="location.href='/library/libraryAdd'"/>
-      			</td>
-      		</tr>
-      	</table>
-      	</form>
+	  <div class="row content">
+	    <div class="col-sm-2 sidenav">
+	      <p><a href="#">¥Îø©</a></p>
+	      <p><a href="#">π›≥≥</a></p>
+	     
+	    </div>
+	    <div class="col-sm-8 text-center"> 
+	      <h1>µµº≠ π›≥≥</h1>
+	       <form action="<c:url value ='/rental/rentalselect'/>" method="post">
+	       	<table align="center">
+	      
+	       		<tr>
+	      			<td>µµº≠ƒ⁄µÂ</td>
+	      			<td><input type="text" name="bookCode"/></td>
+	      			<td><input type="submit" value="¡∂»∏"/></td>
+	      		</tr>
+	     	</table>
+	      </form>
+	    </div>
+	  </div>
 	</div>
 
 

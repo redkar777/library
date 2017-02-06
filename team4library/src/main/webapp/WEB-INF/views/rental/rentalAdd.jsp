@@ -45,7 +45,6 @@
   </style>
 </head>
 <body>
-	
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
@@ -56,31 +55,56 @@
 	      </button>
 	      <a class="navbar-brand" href="#">4조 도서관</a>
 	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav">
+	        <li><a href="#">도서관리</a></li>
+	        <li><a href="#">회원관리</a></li>
+	        <li><a href="#">대여관리</a></li>
+	      </ul>
+	    </div>
 	  </div>
 	</nav>
-	  
 	<div class="container-fluid text-center">    
- 
-      <h1>도서관 관리 시스템</h1>
-      <form action="<c:url value="/library/libraryLogin"/>" method="post">
-      	<table align="center">
-      		<tr>
-      			<td>ID</td>
-      			<td><input type="text" name="library_id"/></td>
-      		</tr>
-      		<tr>
-      			<td>PW</td>
-      			<td><input type="password" name="library_pw"/></td>
-      		</tr>
-      		<tr>
-      			<td></td>
-      			<td>
-      			<input type="button" value="로그인"/>
-      			<input type="button" value="도서관가입" onclick="location.href='/library/libraryAdd'"/>
-      			</td>
-      		</tr>
-      	</table>
-      	</form>
+	  <div class="row content">
+	    <div class="col-sm-2 sidenav">
+	      <p><a href="#">대여</a></p>
+	      <p><a href="#">반납</a></p>
+	     
+	    </div>
+	    <div class="col-sm-8 text-center"> 
+	      <h1>도서 대여</h1>
+	      <form action="<c:url value="/rental/rentalAdd"/>" method="post">
+	      <table align="center">
+	      		<tr>
+	      			<td>도서코드</td>
+	      			<td><input type="text" name="bookCode"/></td>
+	      		</tr>
+	      		<tr>
+	      			<td>회원ID</td>
+	      			<td><input type="text" name="memberId"/></td>
+	      		</tr>
+	      		<tr>
+	      			<td>반납일</td>
+	      			<td><input type="date" name="rentalEnd"/></td>
+	      		</tr>
+	      		<tr>
+	      			<td>결제금액</td>
+	      			<td>
+	      				<input type="text" name="rentalPayment"/>
+	      			</td>
+	      		</tr>
+	      		<tr>
+	      			<td>
+	      			</td>
+	      			<td>
+	      				<input type="submit" value="대여"/>
+	      				
+	      			</td>
+	      		</tr>
+	      	</table>
+	      	</form>
+	    </div>
+	  </div>
 	</div>
 
 

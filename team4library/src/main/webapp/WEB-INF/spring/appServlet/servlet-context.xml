@@ -24,6 +24,7 @@
                <value>classpath:team4/library/project/LibraryMapper.xml</value>
                <value>classpath:team4/library/project/book/BookMapper.xml</value>
                <value>classpath:team4/library/project/member/MemberMapper.xml</value>
+               <value>classpath:team4/library/project/rental/RentalMapper.xml</value>
            </list>
 		</property>
 	</bean>
