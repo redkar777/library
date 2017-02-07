@@ -56,9 +56,9 @@
 	    </div>
 	    <div class="collapse navbar-collapse" id="myNavbar">
 	      <ul class="nav navbar-nav">
-	        <li><a href="#">도서관리</a></li>
-	        <li><a href="#">회원관리</a></li>
-	        <li><a href="#">대여관리</a></li>
+	        <li><a href="<c:url value='/book/bookAdd/'/>">도서관리</a></li>
+	        <li><a href="<c:url value='/member/memberAdd'/>">회원관리</a></li>
+	        <li><a href="<c:url value='/rental/rentalAdd'/>">대여관리</a></li>
 	      </ul>
 	    </div>
 	  </div>

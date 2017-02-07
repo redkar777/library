@@ -35,7 +35,7 @@ public class LibraryController {
 			libraryService.libraryLogin(library);
 			session.setAttribute("library_id", libraryService.libraryLogin(library).getLibrary_id());
 			
-		return "/home";
+		return "redirect:/home";
 		
 	}
 	@RequestMapping(value="/library/libraryAdd", method=RequestMethod.GET)
