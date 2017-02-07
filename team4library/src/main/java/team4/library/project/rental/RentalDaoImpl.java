@@ -17,10 +17,19 @@ public class RentalDaoImpl implements RentalDao {
 	}
 
 	@Override
-	public Rental renatalSelect(Rental rental) {
+	public Rental rentalSelect(int bookCode) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne(RENTAL_NS+"Selectrental", rental);
+		return sqlSession.selectOne(RENTAL_NS+"Selectrental", bookCode);
 	}
+
+	@Override
+	public int rentalReturn(Rental rental) {
+		// TODO Auto-generated method stub
+		return sqlSession.update(RENTAL_NS+"Returnrental", rental);
+	}
+
+
+
 	
 
 }

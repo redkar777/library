@@ -39,4 +39,14 @@
         <constructor-arg index="0" ref="sqlSessionFactory" />
     </bean>
 	<context:component-scan base-package="team4.library.project" />	
+	<!-- 로그인 처리 인터셉터 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/*/*"/>
+			<mvc:exclude-mapping path="/library/libraryLogin"/>
+			<mvc:exclude-mapping path="/library/libraryAdd"/>				
+			<bean class="team4.library.project.util.LoginCheckInterceptor"></bean>
+			
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>

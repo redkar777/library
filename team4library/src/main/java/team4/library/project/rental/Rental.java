@@ -10,13 +10,27 @@ public class Rental {
 	private String bookName;
 	private String memberName;
 	private int memberlevelPrice;
-	private Date rentalStart;
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date rentalEnd;
+	private String rentalStart;
+	private String rentalEnd;
 	private String memberId;
 	private int rentalPayment;
 	private int rentalStateNo;
+	private int totalPay;
+	private int getmoney;
 	
+	
+	public int getGetmoney() {
+		return getmoney;
+	}
+	public void setGetmoney(int getmoney) {
+		this.getmoney = getmoney;
+	}
+	public int getTotalPay() {
+		return totalPay;
+	}
+	public void setTotalPay(int totalPay) {
+		this.totalPay = totalPay;
+	}
 	public String getBookName() {
 		return bookName;
 	}
@@ -41,22 +55,25 @@ public class Rental {
 	public void setRentalCode(String rentalCode) {
 		this.rentalCode = rentalCode;
 	}
+
+	
 	public int getBookCode() {
 		return bookCode;
 	}
 	public void setBookCode(int bookCode) {
 		this.bookCode = bookCode;
 	}
-	public Date getRentalStart() {
+	
+	public String getRentalStart() {
 		return rentalStart;
 	}
-	public void setRentalStart(Date rentalStart) {
+	public void setRentalStart(String rentalStart) {
 		this.rentalStart = rentalStart;
 	}
-	public Date getRentalEnd() {
+	public String getRentalEnd() {
 		return rentalEnd;
 	}
-	public void setRentalEnd(Date rentalEnd) {
+	public void setRentalEnd(String rentalEnd) {
 		this.rentalEnd = rentalEnd;
 	}
 	public String getMemberId() {
@@ -77,5 +94,7 @@ public class Rental {
 	public void setRentalStateNo(int rentalStateNo) {
 		this.rentalStateNo = rentalStateNo;
 	}
+	
+	
 	
 }

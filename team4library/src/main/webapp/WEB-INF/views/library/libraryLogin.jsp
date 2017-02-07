@@ -75,7 +75,7 @@
       		<tr>
       			<td></td>
       			<td>
-      			<input type="button" value="로그인"/>
+      			<input type="button" value="로그인" onclick="location.href='/rental/rentalselect'"/>
       			<input type="button" value="도서관가입" onclick="location.href='/library/libraryAdd'"/>
       			</td>
       		</tr>

@@ -3,7 +3,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="team4.library.project.rental.RentalMapper">
-
+<update id="Returnrental" parameterType="team4.library.project.rental.Rental">
+	UPDATE rental 
+	SET 
+		rentalstate_no = 1,
+		rental_end = now(),
+		rental_payment=0 
+		WHERE book_code=#{bookCode}
+</update>
 <insert id="Addrental" parameterType="team4.library.project.rental.Rental">
 	INSERT INTO 
 	rental(
@@ -22,22 +29,23 @@
 		#{rentalPayment}
 		
 		)
-	
-	
-
 </insert>
 <select id="Selectrental" resultType="team4.library.project.rental.Rental"
 		parameterType="int">
 	SELECT 
+		book.book_code as bookCode,
 		book.book_name as bookName,
 	 	member.member_name as memberName,
-	 	memberlevel.memberlevel_price as memberlevelPrice 
-	FROM rental 
+	 	memberlevel.memberlevel_price as memberlevelPrice,
+	 	rental_payment as rentalPayment,
+	 	rental_start as rentalStart,
+	 	rental_end as rentalEnd
+	 	 FROM rental 
 	JOIN book ON rental.book_code=book.book_code 
 	JOIN member ON rental.member_id=member.member_id 
 	JOIN memberlevel ON member.memberlevel_no=memberlevel.memberlevel_no 
 	WHERE 
-	rental.book_code=${bookCode}
+	rental.book_code=#{bookCode}
 
 </select>
 </mapper>

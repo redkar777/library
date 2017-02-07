@@ -68,7 +68,7 @@
 	  <div class="row content">
 	    <div class="col-sm-2 sidenav">
 	      <p><a href="#">대여</a></p>
-	      <p><a href="#">반납</a></p>
+	      <p><a href="<c:url value='/rental/rentalReturn'/>">반납</a></p>
 	     
 	    </div>
 	    <div class="col-sm-8 text-center"> 

@@ -68,7 +68,7 @@
 	  <div class="row content">
 	    <div class="col-sm-2 sidenav">
 	      <p><a href="#">대여</a></p>
-	      <p><a href="#">반납</a></p>
+	      <p><a href="<c:url value='/rental/rentalReturn'/>">반납</a></p>
 	     
 	    </div>
 	    <div class="col-sm-8 text-center"> 
@@ -76,33 +76,37 @@
 	      <form action="<c:url value='/rental/rentalReturn'/>" method="post">
 	      <table align="center">
 	      		<tr>
+	      			<td>도서코드</td>
+	      			<td><input type="text" value="${rental.bookCode}"/></td>
+	      		</tr>
+	      		<tr>
 	      			<td>도서명</td>
-	      			<td><input type="text" value="${member}"/></td>
+	      			<td><input type="text" value="${rental.bookName}"/></td>
 	      		</tr>
 	      		<tr>
 	      			<td>회원이름</td>
-	      			<td><input type="text"/></td>
+	      			<td><input type="text" value="${rental.memberName}"/></td>
 	      		</tr>
 	      		<tr>
 	      			<td>총요금</td>
-	      			<td><input type="text"/></td>
+	      			<td><input type="text" value="${rental.totalPay}"></td>
 	      		</tr>
 	      		<tr>
 	      			<td>받은금액</td>
 	      			<td>
-	      				<input type="text"/>
+	      				<input type="text" value="${rental.rentalPayment}"/>
 	      			</td>
 	      		</tr><tr>
 	      			<td>받을금액</td>
 	      			<td>
-	      				<input type="text"/>
+	      				<input type="text" value="${rental.getmoney}"/>
 	      			</td>
 	      		</tr>
 	      		<tr>
 	      			<td>
 	      			</td>
 	      			<td>
-	      				<input type="submit" value="대여"/>
+	      				<input type="submit" value="반납"/>
 	      				
 	      			</td>
 	      		</tr>
